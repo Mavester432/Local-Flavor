@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Flavor | Menu</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="stallName">Menu</h1>
+    <p>Explore the dishes and add to your cart</p>
+  </header>
+
+  <main class="menu-list">
+    <!-- Dummy Menu Items -->
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x180" alt="Food Item">
+      <h2>Chicken Tacos</h2>
+      <p>Grilled chicken with fresh salsa and guacamole.</p>
+      <span class="price">R50</span>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x180" alt="Food Item">
+      <h2>Beef Burrito</h2>
+      <p>Stuffed with rice, beans, cheese and spicy beef.</p>
+      <span class="price">R70</span>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x180" alt="Food Item">
+      <h2>Veggie Bowl</h2>
+      <p>Quinoa, beans, roasted veg, and tahini sauce.</p>
+      <span class="price">R60</span>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </main>
+
+  <script>
+    // Get stall name from URL and show it as heading
+    const params = new URLSearchParams(window.location.search);
+    const stall = params.get("stall");
+    if (stall) {
+      document.getElementById("stallName").innerText = stall.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) + " Menu";
+    }
+  </script>
+</body>
+</html>
